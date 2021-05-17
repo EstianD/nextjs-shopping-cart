@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.productContainer {
+  flex-grow: 1;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.productContainer > div {
+  text-align: center;
+}
+
+.productContainer:hover {
+  border: 2px solid black;
+}
+
+.thumbnail {
+  width: 200px;
+  height: 125px;
+}
