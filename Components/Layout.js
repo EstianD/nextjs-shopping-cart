@@ -3,8 +3,6 @@ import Header from "./Nav/Header";
 import Footer from "./Nav/Footer";
 
 const Layout = ({ children }) => {
-  console.log("LAYOUTS: ", children);
-
   return (
     <div>
       <Header />

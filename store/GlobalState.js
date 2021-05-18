@@ -10,12 +10,21 @@ export const DataProvider = ({ children }) => {
     products: [...ProductList],
     cart: [],
   };
+  //   let cartArray = [];
 
   const [state, dispatch] = useReducer(reducers, initialState);
   const { cart } = state;
 
   useEffect(() => {
     // Get cart data
+    console.log("GLOBAL STATE EFFECT");
+    //  console.log("STORAGE 1: ", cartArray);
+    const cartRes = JSON.parse(localStorage.getItem("shopping-cart"));
+    if (cartRes) {
+      dispatch({ type: "GET_CART", payload: { cart: cartRes } });
+    } else {
+      dispatch({ type: "GET_CART", payload: { cart: [] } });
+    }
   }, []);
 
   return (
