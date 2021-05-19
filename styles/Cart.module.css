@@ -1,0 +1,62 @@
+.cartContainer {
+  display: flex;
+}
+
+.cartProductsContainer {
+  width: 50%;
+}
+
+.cartSummaryContainer {
+  width: 50%;
+}
+
+.itemContainer {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* .itemContainer div {
+  flex-grow: 1;
+} */
+
+.itemImage {
+  width: 45%;
+}
+
+.itemImage img {
+  width: 75%;
+  object-fit: contain;
+  height: auto;
+}
+
+.itemTitleBox {
+  width: 25%;
+}
+
+.itemBrand {
+  font-size: 75%;
+}
+
+.itemsQuantityContainer {
+  display: flex;
+  width: 15%;
+}
+
+.itemPrice {
+  /* flex-grow: 1; */
+  width: 15%;
+}
+
+/* Cart summary section */
+
+.cartSummaryTable {
+  width: 100%;
+  text-align: left;
+}
+
+.cartSummaryTable th {
+  font-size: 75%;
+}

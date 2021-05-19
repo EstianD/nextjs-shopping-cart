@@ -15,3 +15,11 @@
   width: 100%;
   height: auto;
 }
+
+.productAddToCartBtn {
+}
+
+.productAddedText {
+  color: green;
+  border: 1px solid green;
+}

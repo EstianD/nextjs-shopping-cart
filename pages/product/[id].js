@@ -29,6 +29,7 @@ const Product = ({ product }) => {
           <div className={styles.brandName}>{product.brand}</div>
           <div className="product-description">{product.description}</div>
           {/* <button className={styles.productAddBtn}>Add to cart</button> */}
+          <br />
           <AddToCartBtn state={state} product={product} />
         </div>
       </div>
