@@ -9,15 +9,6 @@ export const Product = ({ product, handleProductClick }) => {
   const { state } = useContext(DataContext);
   // console.log("PRODUCT STATE: ", state);
 
-  // let addToCartBtn = () => {
-  //   const res = state.cart.filter((item) => {
-  //     return item.id === product.id;
-  //   });
-  //   console.log("BUTTON RESULT: ", res);
-  //   if (res.length) return "In cart";
-  //   return <button id="add_btn">Add to cart</button>;
-  // };
-
   return (
     <div
       className={styles.productContainer}

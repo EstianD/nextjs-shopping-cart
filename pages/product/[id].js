@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import { ProductList } from "../../ProductList";
+import { DataContext } from "../../store/GlobalState";
 // import { Header } from "../../Components/Header/Nav";
 import styles from "../../styles/Product.module.css";
+import { AddToCartBtn } from "../../Components/Products/AddToCartBtn";
 
 const Product = ({ product }) => {
   const router = useRouter();
   const { id } = router.query;
+  const { state } = useContext(DataContext);
+
   //   const [product, setProduct] = useState();
   console.log("product: ", product);
 
@@ -24,7 +28,8 @@ const Product = ({ product }) => {
           <div className={styles.productTitle}>{product.title}</div>
           <div className={styles.brandName}>{product.brand}</div>
           <div className="product-description">{product.description}</div>
-          <button className={styles.productAddBtn}>Add to cart</button>
+          {/* <button className={styles.productAddBtn}>Add to cart</button> */}
+          <AddToCartBtn state={state} product={product} />
         </div>
       </div>
     </div>
