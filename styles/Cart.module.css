@@ -47,7 +47,11 @@
 
 .itemPrice {
   /* flex-grow: 1; */
-  width: 15%;
+  width: 10%;
+}
+
+.removeItem {
+  width: 5%;
 }
 
 /* Cart summary section */
@@ -59,4 +63,8 @@
 
 .cartSummaryTable th {
   font-size: 75%;
+}
+
+.cartTotalCell {
+  border-top: 1px solid black;
 }

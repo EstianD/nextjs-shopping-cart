@@ -7,12 +7,12 @@ function CartSummary({ cart }) {
   const renderCartSummary = () => {
     let cartTotal = 0;
 
-    let rows = cart.map((item) => {
+    let rows = cart.map((item, i) => {
       let itemTotal = 0;
       itemTotal = item.price * item.quantity;
       cartTotal += itemTotal;
       return (
-        <tr>
+        <tr key={i}>
           <td>{item.title}</td>
           <td>{item.quantity}</td>
           <td>R{item.price}</td>
@@ -22,18 +22,24 @@ function CartSummary({ cart }) {
     });
     return (
       <table className={styles.cartSummaryTable}>
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-        {rows}
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
         <tfoot>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>R{cartTotal}</td>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td className={styles.cartTotalCell}>
+              <b>R{cartTotal}</b>
+            </td>
+          </tr>
         </tfoot>
       </table>
     );
@@ -43,6 +49,7 @@ function CartSummary({ cart }) {
     <div>
       Summary
       {renderCartSummary()}
+      {/* <button></button> */}
     </div>
   );
 }

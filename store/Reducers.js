@@ -16,6 +16,16 @@ const reducers = (state, action) => {
         ...state,
         cart: [...action.payload],
       };
+    case ACTIONS.INCREMENT_ITEM:
+      console.log("INCREMENT: ", action);
+      return { ...state, cart: [...action.payload] };
+    case ACTIONS.DECREMENT_ITEM:
+      console.log("DECREMENT: ", action);
+      return { ...state, cart: [...action.payload] };
+    case ACTIONS.REMOVE_ITEM:
+      console.log("REMOVE", action);
+      return { ...state, cart: [...action.payload] };
+
     default:
       return state;
   }

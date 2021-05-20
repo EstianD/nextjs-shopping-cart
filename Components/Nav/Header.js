@@ -8,8 +8,11 @@ const Header = () => {
   // const { cart } = state.cart;
   console.log("HEADER STATE: ", state);
   console.log("CART STATE: ", state.cart);
-
-  const cartValue = state.cart ? state.cart.length : 0;
+  let cartTotal = 0;
+  // const cartValue = state.cart ? state.cart.length : 0;
+  const cartValue = state.cart.map((item) => {
+    cartTotal += item.quantity;
+  });
 
   const router = useRouter();
   return (
@@ -24,7 +27,7 @@ const Header = () => {
         className={styles.navLink}
         onClick={() => router.push("/cart", undefined, { shallow: true })}
       >
-        Cart ({cartValue})
+        Cart ({cartTotal})
       </div>
     </div>
   );

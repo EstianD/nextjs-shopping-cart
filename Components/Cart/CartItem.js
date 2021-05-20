@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "../../styles/Cart.module.css";
+import RemoveCartItem from "./RemoveCartItem";
 
-function CartItem({ item }) {
+function CartItem({
+  item,
+  handleCartItemIncrement,
+  handleCartItemDecrement,
+  handleCartItemRemove,
+}) {
+  // const renderIncrementBtn =
+
   return (
     <div className={styles.itemContainer}>
       <div className={styles.itemImage}>
@@ -13,11 +21,23 @@ function CartItem({ item }) {
         <span className={styles.itemBrand}>{item.brand}</span>
       </div>
       <div className={styles.itemsQuantityContainer}>
-        <button className="">-</button>
+        {item.quantity > 1 && (
+          <button onClick={() => handleCartItemDecrement(item.id)} className="">
+            -
+          </button>
+        )}
         <label>{item.quantity}</label>
-        <button className="">+</button>
+        <button className="" onClick={() => handleCartItemIncrement(item.id)}>
+          +
+        </button>
       </div>
       <div className={styles.itemPrice}>R {item.price}</div>
+      <div className={styles.removeItem}>
+        <RemoveCartItem
+          handleCartItemRemove={handleCartItemRemove}
+          item={item}
+        />
+      </div>
     </div>
   );
 }
