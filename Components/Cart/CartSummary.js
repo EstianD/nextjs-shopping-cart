@@ -20,34 +20,36 @@ function CartSummary({ cart }) {
         </tr>
       );
     });
-    return (
-      <table className={styles.cartSummaryTable}>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-        <tfoot>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td className={styles.cartTotalCell}>
-              <b>R{cartTotal}</b>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    );
+
+    if (cart.length !== 0) {
+      return (
+        <table className={styles.cartSummaryTable}>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>{rows}</tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td className={styles.cartTotalCell}>
+                <b>R{cartTotal}</b>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      );
+    }
   };
 
   return (
     <div>
-      Summary
       {renderCartSummary()}
       {/* <button></button> */}
     </div>

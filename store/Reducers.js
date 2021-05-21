@@ -25,6 +25,9 @@ const reducers = (state, action) => {
     case ACTIONS.REMOVE_ITEM:
       console.log("REMOVE", action);
       return { ...state, cart: [...action.payload] };
+    case ACTIONS.CLEAR_CART:
+      console.log("CLEAR_CART: ", action);
+      return { ...state, cart: [] };
 
     default:
       return state;

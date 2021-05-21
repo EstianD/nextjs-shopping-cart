@@ -4,6 +4,7 @@ export const ACTIONS = {
   INCREMENT_ITEM: "INCREMENT_ITEM",
   DECREMENT_ITEM: "DECREMENT_ITEM",
   REMOVE_ITEM: "REMOVE_ITEM",
+  CLEAR_CART: "CLEAR_CART",
 };
 
 export const addToCart = (product, cart) => {

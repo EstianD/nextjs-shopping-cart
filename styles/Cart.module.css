@@ -1,13 +1,16 @@
 .cartContainer {
   display: flex;
+  padding: 10px;
 }
 
 .cartProductsContainer {
   width: 50%;
+  padding: 10px;
 }
 
 .cartSummaryContainer {
   width: 50%;
+  padding: 10px;
 }
 
 .itemContainer {
@@ -67,4 +70,10 @@
 
 .cartTotalCell {
   border-top: 1px solid black;
+}
+
+.emptyCartText {
+  width: 100%;
+  text-align: center;
+  color: green;
 }
